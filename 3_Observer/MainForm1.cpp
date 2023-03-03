@@ -1,9 +1,9 @@
-// ½çÃæÀà
+// ç•Œé¢ç±»
 class MainForm : public Form
 {
-	TextBox* txtFilePath;		// ÎÄ±¾¿ò -- ÊäÈëÐèÒª²ð·ÖµÄÎÄ¼þÂ·¾¶
-	TextBox* txtFileNumber;		// ÎÄ±¾¿ò -- ÊäÈëÒª²ð¼¸¸ö
-	ProgressBar* progressBar;	// ½ø¶ÈÌõ -- Êä³öÊµÊ±½ø¶È
+	TextBox* txtFilePath;		// æ–‡æœ¬æ¡† -- è¾“å…¥éœ€è¦æ‹†åˆ†çš„æ–‡ä»¶è·¯å¾„
+	TextBox* txtFileNumber;		// æ–‡æœ¬æ¡† -- è¾“å…¥è¦æ‹†å‡ ä¸ª
+	ProgressBar* progressBar;	// è¿›åº¦æ¡ -- è¾“å‡ºå®žæ—¶è¿›åº¦
 
 public:
 	void Button1_Click(){
@@ -11,9 +11,9 @@ public:
 		string filePath = txtFilePath->getText();
 		int number = atoi(txtFileNumber->getText().c_str());
 
-		FileSplitter splitter(filePath, number, progressBar);	// ´´½¨²ð·Ö¹¤¾ßÀà¶ÔÏó
+		FileSplitter splitter(filePath, number, progressBar);	// åˆ›å»ºæ‹†åˆ†å·¥å…·ç±»å¯¹è±¡
 
-		splitter.split();	// ²ð·Ö
+		splitter.split();	// æ‹†åˆ†
 
 	}
 };

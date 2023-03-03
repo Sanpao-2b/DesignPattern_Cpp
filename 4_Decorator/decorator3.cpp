@@ -58,24 +58,14 @@ public:
 DecoratorStream: public Stream{
 protected:
     Stream* stream;//...
-    
-    DecoratorStream(Stream * stm):stream(stm){
-    
-    }
-    
+    DecoratorStream(Stream * stm):stream(stm){}
 };
 
 class CryptoStream: public DecoratorStream {
- 
-
 public:
-    CryptoStream(Stream* stm):DecoratorStream(stm){
-    
-    }
-    
+    CryptoStream(Stream* stm):DecoratorStream(stm){}
     
     virtual char Read(int number){
-       
         //额外的加密操作...
         stream->Read(number);//读文件流
     }
@@ -94,30 +84,19 @@ public:
 
 
 class BufferedStream : public DecoratorStream{
-    
-    Stream* stream;//...
-    
 public:
-    BufferedStream(Stream* stm):DecoratorStream(stm){
-        
-    }
+    BufferedStream(Stream* stm):DecoratorStream(stm){}
     //...
 };
-
-
-
 
 void Process(){
 
     //运行时装配
-    FileStream* s1=new FileStream();
-    
-    CryptoStream* s2=new CryptoStream(s1);
-    
-    BufferedStream* s3=new BufferedStream(s1);
-    
-    BufferedStream* s4=new BufferedStream(s2);
-    
-    
+    FileStream* s1=new FileStream();            // 文件流操作对象
 
+    CryptoStream* s2=new CryptoStream(s1);      // 装饰:加密, 在三个方法中加入了额外加密操作
+    
+    BufferedStream* s3=new BufferedStream(s1);  // 装饰:缓存
+    
+    BufferedStream* s4=new BufferedStream(s2);  // 装饰:加密+缓存
 }

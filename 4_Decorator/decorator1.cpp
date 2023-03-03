@@ -154,9 +154,9 @@ public:
 void Process(){
 
     //编译时装配
-    CryptoFileStream *fs1 = new CryptoFileStream();
+    CryptoFileStream *fs1 = new CryptoFileStream();                 
 
-    BufferedFileStream *fs2 = new BufferedFileStream();
+    BufferedFileStream *fs2 = new BufferedFileStream(); 
 
     CryptoBufferedFileStream *fs3 =new CryptoBufferedFileStream();
 

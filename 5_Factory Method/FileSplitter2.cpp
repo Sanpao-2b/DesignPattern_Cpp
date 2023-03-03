@@ -2,22 +2,22 @@
 
 //具体类
 class BinarySplitter : public ISplitter{
-    
+    //...
 };
 
 class TxtSplitter: public ISplitter{
-    
+    //...
 };
 
 class PictureSplitter: public ISplitter{
-    
+    //...
 };
 
 class VideoSplitter: public ISplitter{
-    
+    //...
 };
 
-//具体工厂
+// 每个具体类对应一个具体工厂, 用于生产其对象
 class BinarySplitterFactory: public SplitterFactory{
 public:
     virtual ISplitter* CreateSplitter(){

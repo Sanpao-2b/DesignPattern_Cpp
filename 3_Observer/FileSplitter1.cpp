@@ -1,9 +1,9 @@
-// ²ð·Ö¹¤¾ßÀà(Õâ¸ö°¸ÀýÖÐ, Õâ¸ö¹¤¾ßÀà·Ç³£²»ÎÈ¶¨(±àÒëÊ±°ó¶¨(¾²Ì¬°ó¶¨))) , ÏëÏëÈç¹ûÎÒÃÇÒª¸ü¸ÄÐèÇó, Õâ¸ö¹¤¾ßÀàÒª¸ÄµÄµØ·½ÓÐ(1)(2)(3)...ÎÒÕâ¸ö¹¤¾ßÀàÒ»¹²¾ÍÈý¿é´úÂë, È«¶¼Òª¸Ä!
+// æ‹†åˆ†å·¥å…·ç±»(è¿™ä¸ªæ¡ˆä¾‹ä¸­, è¿™ä¸ªå·¥å…·ç±»éžå¸¸ä¸ç¨³å®š(ç¼–è¯‘æ—¶ç»‘å®š(é™æ€ç»‘å®š))) , æƒ³æƒ³å¦‚æžœæˆ‘ä»¬è¦æ›´æ”¹éœ€æ±‚, è¿™ä¸ªå·¥å…·ç±»è¦æ”¹çš„åœ°æ–¹æœ‰(1)(2)(3)...æˆ‘è¿™ä¸ªå·¥å…·ç±»ä¸€å…±å°±ä¸‰å—ä»£ç , å…¨éƒ½è¦æ”¹!
 class FileSplitter
 {
 	string m_filePath;
 	int m_fileNumber;
-	ProgressBar* m_progressBar;	// ²»ÎÈ¶¨(±ä»¯), Ëæ×ÅÐèÇóµÄ¸ü¸ÄorÀ©Õ¹, ÕâÀïÊÇ»á¸Ä±äµÄ. ±ÈÈç²»ÏÔÊ¾½ø¶ÈÌõÁË, ÒªÊä³ö"....."ÏÔÊ¾½ø¶È, »òÕßÒªÒ»¸öÔ²ÐÎ×ªÈ¦
+	ProgressBar* m_progressBar;	// ä¸ç¨³å®š(å˜åŒ–), éšç€éœ€æ±‚çš„æ›´æ”¹oræ‰©å±•, è¿™é‡Œæ˜¯ä¼šæ”¹å˜çš„. æ¯”å¦‚ä¸æ˜¾ç¤ºè¿›åº¦æ¡äº†, è¦è¾“å‡º"....."æ˜¾ç¤ºè¿›åº¦, æˆ–è€…è¦ä¸€ä¸ªåœ†å½¢è½¬åœˆ
 
 public:
 	FileSplitter(const string& filePath, int fileNumber, ProgressBar* progressBar) :
@@ -15,9 +15,9 @@ public:
 
 	void split(){
 
-		//1.¶ÁÈ¡´óÎÄ¼þ
+		//1.è¯»å–å¤§æ–‡ä»¶
 
-		//2.·ÖÅú´ÎÏòÐ¡ÎÄ¼þÖÐÐ´Èë
+		//2.åˆ†æ‰¹æ¬¡å‘å°æ–‡ä»¶ä¸­å†™å…¥
 		for (int i = 0; i < m_fileNumber; i++){
 			//...
 			float progressValue = m_fileNumber;

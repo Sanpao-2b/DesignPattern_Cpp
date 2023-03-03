@@ -1,4 +1,4 @@
-// ¸ü¸ÄºóµÄ
+// æ›´æ”¹åçš„
 class MainForm : public Form, public IProgress
 {
 	TextBox* txtFilePath;
@@ -15,8 +15,8 @@ public:
 
 		FileSplitter splitter(filePath, number);
 
-		splitter.addIProgress(this); //¶©ÔÄÍ¨Öª ×Ô¼ºÒ²ÊÇ¸ö¹Û²ìÕß, ÆäÊµÒ²¿ÉÒÔ²»ÊÇ, Ö»ĞèÒª°ÑprogressBar±ä³É¸úcnÒ»Ñù ¸ã¸ö×ÓÀà, ÖØĞ´º¯Êı ÕâÑùMainFormÀà»á¸ü¸É¾»Ò»Ğ© 
-		splitter.addIProgress(&cn); //¶©ÔÄÍ¨Öª
+		splitter.addIProgress(this); //è®¢é˜…é€šçŸ¥ è‡ªå·±ä¹Ÿæ˜¯ä¸ªè§‚å¯Ÿè€…, å…¶å®ä¹Ÿå¯ä»¥ä¸æ˜¯, åªéœ€è¦æŠŠprogressBarå˜æˆè·Ÿcnä¸€æ · æä¸ªå­ç±», é‡å†™å‡½æ•° è¿™æ ·MainFormç±»ä¼šæ›´å¹²å‡€ä¸€äº› 
+		splitter.addIProgress(&cn); //è®¢é˜…é€šçŸ¥
 
 		splitter.split();
 
@@ -29,7 +29,7 @@ public:
 	}
 };
 
-//////////////////////////////////// À©Õ¹
+//////////////////////////////////// æ‰©å±•
 class ConsoleNotifier : public IProgress {
 public:
 	virtual void DoProgress(float value){

@@ -1,7 +1,7 @@
-// Ğé»ùÀà(½Ó¿ÚÀà)
+// è™šåŸºç±»(æ¥å£ç±»)
 class IProgress{
 public:
-	virtual void DoProgress(float value)=0;	 // ¹Û²ìÕßÄ£Ê½(ÊÂ¼ş)ÔÚÓÎÏ·ÖĞÒ²ÓÃµÃ¼«Æä¶à, Ëû·¢³öÍ¨Öª¸ø¹Û²ìÕß, ¿ÉÒÔ´«µİÒ»Ğ©²ÎÊı, ¹Û²ìÕßÃÇ¿ÉÒÔ¸ù¾İÕâ¸ö²ÎÊı×ö³ö×Ô¼ºµÄĞĞÎª
+	virtual void DoProgress(float value)=0;	 // è§‚å¯Ÿè€…æ¨¡å¼(äº‹ä»¶)åœ¨æ¸¸æˆä¸­ä¹Ÿç”¨å¾—æå…¶å¤š, ä»–å‘å‡ºé€šçŸ¥ç»™è§‚å¯Ÿè€…, å¯ä»¥ä¼ é€’ä¸€äº›å‚æ•°, è§‚å¯Ÿè€…ä»¬å¯ä»¥æ ¹æ®è¿™ä¸ªå‚æ•°åšå‡ºè‡ªå·±çš„è¡Œä¸º
 	virtual ~IProgress(){}
 };
 
@@ -11,27 +11,27 @@ class FileSplitter
 	string m_filePath;
 	int m_fileNumber;
 
-	List<IProgress*>  m_iprogressList; // ³éÏóÍ¨Öª»úÖÆ£¬Ö§³Ö¶à¸ö¹Û²ìÕß
+	List<IProgress*>  m_iprogressList; // æŠ½è±¡é€šçŸ¥æœºåˆ¶ï¼Œæ”¯æŒå¤šä¸ªè§‚å¯Ÿè€…
 	
 public:
 	FileSplitter(const string& filePath, int fileNumber) 
 		: m_filePath(filePath), m_fileNumber(fileNumber){}
 
 	void split(){
-		//1.¶ÁÈ¡´óÎÄ¼ş
-		//2.·ÖÅú´ÎÏòĞ¡ÎÄ¼şÖĞĞ´Èë
+		//1.è¯»å–å¤§æ–‡ä»¶
+		//2.åˆ†æ‰¹æ¬¡å‘å°æ–‡ä»¶ä¸­å†™å…¥
 		for (int i = 0; i < m_fileNumber; i++){
-			//²ğ·Ö.....
+			//æ‹†åˆ†.....
 
-			// ½ø¶È¼ÆËã
+			// è¿›åº¦è®¡ç®—
 			float progressValue = m_fileNumber;
 			progressValue = (i + 1) / progressValue;
-			onProgress(progressValue);	// ·¢ËÍÍ¨Öª
+			onProgress(progressValue);	// å‘é€é€šçŸ¥
 		}
 
 	}
 
-	// Ïò¹Û²ìÕßÁĞ±íÖĞÌí¼Ó¹Û²ìÕß
+	// å‘è§‚å¯Ÿè€…åˆ—è¡¨ä¸­æ·»åŠ è§‚å¯Ÿè€…
 	void addIProgress(IProgress* iprogress){
 		m_iprogressList.push_back(iprogress);
 	}
